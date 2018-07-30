@@ -1,0 +1,33 @@
+  .el-header{
+    background: #606266;
+    width: 100%;
+  }
+  .el-main{
+    background-color: #C0C4CC;
+    color: #333;
+    height: 100%;
+  }
+  .big{
+    margin-top: 11px;
+    float: left;
+    font-size: 24px;
+    font-family: Microsoft YaHei;
+    color: white;
+  }
+  .icon-right{
+    margin-top: 11px;
+    float: right;
+  }
+  .icon-font{
+    width: 25px;
+    height: 25px;
+  }
+  .icon-text{
+    margin-top: 8px;
+    float: right;
+    font-size: 13px;
+  }
+  .button{
+    background: #606266;
+    border: 0px;
+  }
