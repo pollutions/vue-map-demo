@@ -4,8 +4,21 @@
     <meta charset="utf-8">
     <title>vue-map</title>
   </head>
-  <body style="width: 100%;height: 100%;margin-left: auto;margin-right:  auto;margin-top: 0px;">
+  <body style="width: 100%;height: 100%;margin-left: auto;margin-right:  auto;margin-top: 0px;" onload="load()">
     <div id="app"></div>
-    <!-- built files will be auto injected -->
+    <div id="map" style="position:absolute;width:100%; height:93%;"></div-->
   </body>
+  <script type="text/javascript" src="http://www.mapgx.com/ime-gx/js/geowaySDK/geoway.all.min.js"></script>
+    <script>
+      var map;
+      function load(){
+	  Geoway.ProxyHost = "/ime-gx/js/geowaySDK/proxy.jsp?";
+	  var map = new Geoway.GwMap("map");
+	  //加入广西矢量底图 
+	  Geoway.WMTSUtil.addLayerToMap("gxvec", "http://www.mapgx.com/ime-server/rest/tdtgx_vec/wmts", true, "tiles", "Vector", map);
+	  //加入广西矢量注记 
+	  Geoway.WMTSUtil.addLayerToMap("gxvecanno", "http://www.mapgx.com/ime-server/rest/tdtgx_vecanno/wmts", false, "tiles", "Vector", map);
+	  map.setCenter(new Geoway.LonLat(108.36, 22.82), 10);
+	}
+    </script>
 </html>
